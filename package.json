@@ -7,6 +7,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "cssnano": "^5.0.16",
+    "postcss-import": "^14.0.2",
     "vue": "^3.2.25"
   },
   "devDependencies": {

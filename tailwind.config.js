@@ -2,20 +2,47 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      sans: ['apple-system', 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue'],
-      serif: ['apple-system', 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue'],
-      mono: ['apple-system', 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue']
+      sans: [
+        'apple-system',
+        'Segoe UI',
+        'Roboto',
+        'Noto Sans',
+        'Ubuntu',
+        'Cantarell',
+        'Helvetica Neue',
+      ],
+      serif: [
+        'apple-system',
+        'Segoe UI',
+        'Roboto',
+        'Noto Sans',
+        'Ubuntu',
+        'Cantarell',
+        'Helvetica Neue',
+      ],
+      mono: [
+        'apple-system',
+        'Segoe UI',
+        'Roboto',
+        'Noto Sans',
+        'Ubuntu',
+        'Cantarell',
+        'Helvetica Neue',
+      ],
     },
     extend: {
       colors: {
         primary: colors.emerald,
-        gray: colors.zinc
+        secondary: colors.amber,
+        accent: colors.violet,
+        gray: colors.zinc,
+        info: colors.blue,
+        success: colors.green,
+        warn: colors.yellow,
+        error: colors.red,
         // primary: {
         //   900: "",
         //   800: "",
@@ -30,14 +57,13 @@ module.exports = {
         // }
       },
       padding: {
-        'xs': '8px',
-        'sm': '10px',
-        'md': '14px',
-        'lg': '20px',
-        'xl': '24px',
-      }
+        xs: '8px',
+        sm: '10px',
+        md: '14px',
+        lg: '20px',
+        xl: '24px',
+      },
     },
   },
-  plugins: [
-  ],
+  plugins: [],
 }

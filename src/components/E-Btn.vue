@@ -9,7 +9,7 @@ export default defineComponent({
   props: {
     type: {
       type: String,
-      default: () => "standard",
+      default: () => "",
     },
     size: String,
     color: String,
@@ -18,35 +18,11 @@ export default defineComponent({
   setup(props) {
     const { size, color, type, label } = toRefs(props);
     const classString = computed(() => {
-      const res = `
-      rounded 
-      border-none 
-      ring-none 
-      outline-none  
-      text-${size.value} 
-      bg-${color.value}-500  
-      hover:bg-${color.value}-600  
-      active:bg-${color.value}-700 `;
-
-      // padding, default: md
-      let padding = `px-md py-sm`;
-      if (size.value === "xs") {
-        padding = "px-md py-xs";
-      } else if (size.value === "sm") {
-        padding = "px-md py-sm";
-      } else if (size.value === "lg") {
-        padding = "px-lg py-sm";
-      } else if (size.value === "xl") {
-        padding = "px-xl py-md";
+      let typeClass = "";
+      if (type.value.length >0) {
+        typeClass = `btn-design-${type.value}`
       }
-
-      // font-color
-      let fontColor = "text-white";
-      if (type.value === "flat") {
-        fontColor = "text-primary-500";
-      }
-
-      return res + " " + padding + " " + fontColor;
+      return `btn btn-${color.value} btn-size-${size.value} ${typeClass}`;
     });
 
     return {
@@ -57,5 +33,5 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style lang="scss">
 </style>

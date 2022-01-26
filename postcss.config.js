@@ -1,8 +1,21 @@
 module.exports = {
-  plugins: {
-    tailwindcss: {
-      config: './tailwind.config.js'
-    },
-    autoprefixer: {},
-  },
+  plugins: [
+    require('postcss-import'),
+    require('postcss-nested')({
+      "bubble": [
+        "screen"
+      ]
+    }),
+    require('tailwindcss')('./tailwind.config.js'),
+    require('autoprefixer'),
+    require('cssnano')({
+      "preset": [
+        "default",
+        {
+          "mergeRules": false,
+          "normalizeWhitespace": false,
+        }
+      ]
+    }),
+  ],
 }
