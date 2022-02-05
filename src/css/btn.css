@@ -3,11 +3,16 @@
 
   & {
     @apply bg-primary-500 text-white border-primary-500;
+
     &:hover {
       @apply bg-primary-600;
     }
     &:active {
       @apply bg-primary-700;
+    }
+    &:disabled {
+      @apply opacity-25 pointer-events-none
+
     }
   }
 
