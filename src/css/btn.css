@@ -11,8 +11,7 @@
       @apply bg-primary-700;
     }
     &:disabled {
-      @apply opacity-25 pointer-events-none
-
+      @apply opacity-25 pointer-events-none;
     }
   }
 
@@ -107,6 +106,105 @@
   }
 
   &-design-flat {
+    @apply bg-transparent;
+
+    &:hover {
+      @apply bg-transparent;
+    }
+    &:active {
+      @apply bg-transparent;
+    }
+
+    &.btn-primary {
+      @apply text-primary-500;
+
+      &:hover {
+        @apply text-primary-600;
+      }
+      &:active {
+        @apply text-primary-700;
+      }
+    }
+
+    &.btn-secondary {
+      @apply text-secondary-500;
+
+      &:hover {
+        @apply text-secondary-600;
+      }
+      &:active {
+        @apply text-secondary-700;
+      }
+    }
+
+    &.btn-accent {
+      @apply text-accent-500;
+
+      &:hover {
+        @apply text-accent-600;
+      }
+      &:active {
+        @apply text-accent-700;
+      }
+    }
+
+    &.btn-gray {
+      @apply text-gray-500;
+
+      &:hover {
+        @apply text-gray-600;
+      }
+      &:active {
+        @apply text-gray-700;
+      }
+    }
+
+    &.btn-info {
+      @apply text-info-500;
+
+      &:hover {
+        @apply text-info-600;
+      }
+      &:active {
+        @apply text-info-700;
+      }
+    }
+
+    &.btn-success {
+      @apply text-success-500;
+
+      &:hover {
+        @apply text-success-600;
+      }
+      &:active {
+        @apply text-success-700;
+      }
+    }
+
+    &.btn-warn {
+      @apply text-warn-500;
+
+      &:hover {
+        @apply text-warn-600;
+      }
+      &:active {
+        @apply text-warn-700;
+      }
+    }
+
+    &.btn-error {
+      @apply text-error-500;
+
+      &:hover {
+        @apply text-error-600;
+      }
+      &:active {
+        @apply text-error-700;
+      }
+    }
+  }
+
+  &-design-outline {
     @apply bg-transparent border border-solid;
 
     &.btn-primary {
