@@ -45,7 +45,7 @@ export default defineComponent({
 });
 </script>
 <template>
-  <div class="flex flex-col gap-4"></div>
+  <div class="flex flex-col gap-4">
     <div class="flex flex-row gap-2">
       <e-input
         ref="nameRef"
