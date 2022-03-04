@@ -1,15 +1,19 @@
 <script>
 import { defineComponent, computed } from "vue";
 import { useRouter } from "vue-router";
+import {useThemeStore} from "./stores/theme"
 import EBtn from "./components/E-Btn.vue";
 import EInput from "./components/E-Input.vue";
+import ESelect from "./components/E-Select.vue";
 
 export default defineComponent({
-  components: { EBtn, EInput },
+  components: { EBtn, EInput, ESelect },
   setup() {
     const router = useRouter();
+    const themeStore = useThemeStore();
     const currenRouteName = computed(() => router.currentRoute.value.name);
     return {
+      themeStore,
       currenRouteName,
       go: (name) => router.push({ name: name }),
     };

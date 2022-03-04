@@ -1,5 +1,5 @@
 .btn {
-  @apply font-mono uppercase rounded whitespace-nowrap;
+  @apply font-mono uppercase rounded whitespace-nowrap w-full;
 
   & {
     @apply bg-primary-500 text-white border-primary-500;

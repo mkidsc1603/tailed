@@ -1,4 +1,4 @@
-.ipt {
+.sel {
   @apply rounded border border-solid border-gray-500 w-full;
 
   &-primary {
@@ -73,6 +73,14 @@
     }
     &-xl {
       @apply px-xl py-md text-xl;
+    }
+  }
+
+  option {
+    @apply px-md py-xs text-base;
+
+    &:hover{
+      @apply bg-error-500;
     }
   }
 }

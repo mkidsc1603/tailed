@@ -4,9 +4,13 @@ import EBtn from "../components/E-Btn.vue";
 import EInput from "../components/E-Input.vue";
 import ETodoItem from "../components/E-TodoItem.vue";
 import ETab from "../components/E-Tab.vue";
+import ESelect from "../components/E-Select.vue";
+import { useThemeStore } from "../stores/theme";
+
 export default defineComponent({
-  components: { EBtn, EInput, ETodoItem, ETab },
+  components: { EBtn, EInput, ETodoItem, ETab, ESelect },
   setup() {
+    const themeStore = useThemeStore();
     const list = reactive([]);
     const form = reactive({
       name: "",
@@ -14,6 +18,7 @@ export default defineComponent({
     const nameRef = ref(null);
 
     return {
+      themeStore,
       list,
       form,
       nameRef,
@@ -45,31 +50,41 @@ export default defineComponent({
 });
 </script>
 <template>
-  <div class="flex flex-col gap-4 ">
+  <div class="flex flex-col gap-4">
     <div class="flex flex-row gap-2">
-      <e-tab color="secondary" size="xs"/>
+      <e-tab :size="themeStore.size" :color="themeStore.color" />
     </div>
     <div class="flex flex-row gap-2">
-      <div class="flex flex-col gap-1">
+      <div class="flex flex-col gap-1 flex-auto">
         <label class="text-sm font-bold">項目名稱</label>
         <e-input
           ref="nameRef"
           v-model="form.name"
-          size="sm"
-          color="primary"
+          :size="themeStore.size"
+          :color="themeStore.color"
           placeholder="Please type todo item ..."
         />
       </div>
       <div class="flex flex-col justify-end">
         <e-btn
-          color="primary"
+          :color="themeStore.color"
           type="outline"
-          size="sm"
+          :size="themeStore.size"
           label="新增"
           @click="add"
           @keyup.enter="add"
           :disabled="form.name === ''"
         />
+      </div>
+    </div>
+    <div class="flex flex-row gap-2">
+      <div class="flex flex-col gap-1 flex-auto">
+        <label class="text-sm font-bold">項目分類</label>
+        <e-select :size="themeStore.size" :color="themeStore.color">
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </e-select>
       </div>
     </div>
     <div class="flex flex-col gap-2">
