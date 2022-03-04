@@ -22,7 +22,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="flex flex-row h-full gap-2">
+  <div class="flex flex-row h-full gap-2 overflow-hidden">
     <div class="flex-none w-40 h-full">
       <div class="flex flex-col h-full gap-2 pt-20">
         <e-btn
@@ -48,7 +48,7 @@ export default defineComponent({
         />
       </div>
     </div>
-    <div class="grow h-full pt-12 px-20 bg-white">
+    <div class="grow h-full pt-12 px-20 bg-white overflow-y-scroll">
       <router-view></router-view>
     </div>
   </div>

@@ -5,10 +5,11 @@ import EInput from "../components/E-Input.vue";
 import ETodoItem from "../components/E-TodoItem.vue";
 import ETab from "../components/E-Tab.vue";
 import ESelect from "../components/E-Select.vue";
+import EProductCard from "../components/E-ProductCard.vue";
 import { useThemeStore } from "../stores/theme";
 
 export default defineComponent({
-  components: { EBtn, EInput, ETodoItem, ETab, ESelect },
+  components: { EBtn, EInput, ETodoItem, ETab, ESelect, EProductCard },
   setup() {
     const themeStore = useThemeStore();
     const list = reactive([]);
@@ -55,6 +56,9 @@ export default defineComponent({
       <e-tab :size="themeStore.size" :color="themeStore.color" />
     </div>
     <div class="flex flex-row gap-2">
+      <e-tab type="flat" :size="themeStore.size" :color="themeStore.color" />
+    </div>
+    <div class="flex flex-row gap-2">
       <div class="flex flex-col gap-1 flex-auto">
         <label class="text-sm font-bold">項目名稱</label>
         <e-input
@@ -86,6 +90,9 @@ export default defineComponent({
           <option value="3">Three</option>
         </e-select>
       </div>
+    </div>
+    <div class="flex flex-row gap-1 flex-wrap">
+      <!-- <e-product-card  v-for="i in 25" :key="i"/> -->
     </div>
     <div class="flex flex-col gap-2">
       <!-- <label v-for="item in list" :key="item.value">{{ item.label }}</label> -->
