@@ -3,9 +3,9 @@ import { defineComponent, reactive, ref } from "vue";
 import EBtn from "../components/E-Btn.vue";
 import EInput from "../components/E-Input.vue";
 import ETodoItem from "../components/E-TodoItem.vue";
-
+import ETab from "../components/E-Tab.vue";
 export default defineComponent({
-  components: { EBtn, EInput, ETodoItem },
+  components: { EBtn, EInput, ETodoItem, ETab },
   setup() {
     const list = reactive([]);
     const form = reactive({
@@ -45,24 +45,32 @@ export default defineComponent({
 });
 </script>
 <template>
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col gap-4 ">
     <div class="flex flex-row gap-2">
-      <e-input
-        ref="nameRef"
-        v-model="form.name"
-        size="sm"
-        color="primary"
-        placeholder="Please type todo item ..."
-      />
-      <e-btn
-        color="primary"
-        type="outline"
-        size="sm"
-        label="新增"
-        @click="add"
-        @keyup.enter="add"
-        :disabled="form.name === ''"
-      />
+      <e-tab color="secondary" size="xs"/>
+    </div>
+    <div class="flex flex-row gap-2">
+      <div class="flex flex-col gap-1">
+        <label class="text-sm font-bold">項目名稱</label>
+        <e-input
+          ref="nameRef"
+          v-model="form.name"
+          size="sm"
+          color="primary"
+          placeholder="Please type todo item ..."
+        />
+      </div>
+      <div class="flex flex-col justify-end">
+        <e-btn
+          color="primary"
+          type="outline"
+          size="sm"
+          label="新增"
+          @click="add"
+          @keyup.enter="add"
+          :disabled="form.name === ''"
+        />
+      </div>
     </div>
     <div class="flex flex-col gap-2">
       <!-- <label v-for="item in list" :key="item.value">{{ item.label }}</label> -->

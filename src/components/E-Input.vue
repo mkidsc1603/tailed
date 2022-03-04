@@ -17,7 +17,7 @@ export default defineComponent({
   },
   emits: ["update:modelValue"],
   setup(props, { emit }) {
-    const { size, color, type, label, modelValue } = toRefs(props);
+    const { size, color, type, modelValue } = toRefs(props);
     const classString = computed(() => {
       let typeClass = "";
       if (type.value.length > 0) {
@@ -31,7 +31,6 @@ export default defineComponent({
         get: () => modelValue.value,
         set: (val) => emit("update:modelValue", val),
       }),
-      innerLabel: computed(() => label.value),
       classString,
     };
   },

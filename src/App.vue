@@ -44,7 +44,7 @@ export default defineComponent({
         />
       </div>
     </div>
-    <div class="grow h-full pt-12 px-20">
+    <div class="grow h-full pt-12 px-20 bg-white">
       <router-view></router-view>
     </div>
   </div>

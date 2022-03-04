@@ -1,5 +1,5 @@
 .<template>
-  <button :class="classString">{{ innerLabel }}</button>
+  <button :class="classString">{{ label }}</button>
 </template>
 
 <script>
@@ -26,7 +26,6 @@ export default defineComponent({
     });
 
     return {
-      innerLabel: computed(() => label.value),
       classString,
     };
   },
