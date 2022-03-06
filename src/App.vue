@@ -19,8 +19,15 @@ export default defineComponent({
 
 <template>
   <div class="flex flex-row h-full gap-2">
-    <div class="flex-none w-40 h-full">
+    <div class="flex-none w-40 h-full px-6">
       <div class="flex flex-col h-full gap-2 pt-20">
+        <div class="self-center">
+          <img title="eropz" class="rounded-full" src="./assets/photo.jpg" />
+        </div>
+        <div class="self-center flex flex-row gap-2 pb-10 pt-4">
+          <img class="w-7 h-7" src="./assets/instagram.png" />
+          <img class="w-7 h-7" src="./assets/mixcloud.png" />
+        </div>
         <e-btn
           type="link"
           size="sm"
