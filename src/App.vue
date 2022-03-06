@@ -1,15 +1,19 @@
 <script>
 import { defineComponent, computed } from "vue";
 import { useRouter } from "vue-router";
+import {useThemeStore} from "./stores/theme"
 import EBtn from "./components/E-Btn.vue";
 import EInput from "./components/E-Input.vue";
+import ESelect from "./components/E-Select.vue";
 
 export default defineComponent({
-  components: { EBtn, EInput },
+  components: { EBtn, EInput, ESelect },
   setup() {
     const router = useRouter();
+    const themeStore = useThemeStore();
     const currenRouteName = computed(() => router.currentRoute.value.name);
     return {
+      themeStore,
       currenRouteName,
       go: (name) => router.push({ name: name }),
     };
@@ -19,7 +23,7 @@ export default defineComponent({
 
 <template>
   <div class="flex flex-row h-full gap-2">
-    <div class="flex-none w-40 h-full px-6">
+    <div class="flex-none w-40 h-full px-6 overflow-hidden">
       <div class="flex flex-col h-full gap-2 pt-20">
         <div class="self-center">
           <img title="eropz" class="rounded-full" src="./assets/photo.jpg" />
@@ -51,7 +55,7 @@ export default defineComponent({
         />
       </div>
     </div>
-    <div class="grow h-full pt-12 px-20">
+    <div class="grow h-full pt-12 px-20 bg-white overflow-y-scroll">
       <router-view></router-view>
     </div>
   </div>

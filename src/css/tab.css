@@ -1,0 +1,107 @@
+.tab-container {
+    @apply flex flex-row w-full;
+}
+
+.tab {
+    @apply font-mono uppercase whitespace-nowrap w-full text-center border border-gray-200;
+
+    & {
+        @apply bg-gray-100 text-black;
+
+        &:hover {
+            @apply text-opacity-50 cursor-pointer;
+        }
+        &:disabled {
+            @apply opacity-25 pointer-events-none;
+        }
+        &:first-child {
+            @apply rounded-l;
+        }
+        &:last-child {
+            @apply rounded-r;
+        }
+        &:active {
+            @apply bg-primary-500 text-white;
+        }
+    }
+
+    &-primary {
+        &[active="true"] {
+            @apply bg-primary-500 text-white;
+        }
+    }
+
+    &-secondary {
+        &[active="true"] {
+            @apply bg-secondary-500 text-white;
+        }
+    }
+
+    &-accent {
+        &[active="true"] {
+            @apply bg-accent-500 text-white;
+        }
+    }
+
+    &-gray {
+        &[active="true"] {
+            @apply bg-gray-500 text-white;
+        }
+    }
+
+    &-info {
+        &[active="true"] {
+            @apply bg-info-500 text-white;
+        }
+    }
+
+    &-success {
+        &[active="true"] {
+            @apply bg-success-500 text-white;
+        }
+    }
+
+    &-warn {
+        &[active="true"] {
+            @apply bg-warn-500 text-white;
+        }
+    }
+
+    &-error {
+        &[active="true"] {
+            @apply bg-error-500 text-white;
+        }
+    }
+
+    &-design-flat {
+        @apply bg-transparent text-black rounded-none border-x-0 border-t-0  border-b-2 border-b-gray-400;
+        & {
+            @apply bg-transparent;
+
+            [active],
+            [active="true"] {
+                @apply text-primary-500 bg-white border-b-primary-500;
+            }
+        }
+    }
+    &-size {
+        & {
+            @apply px-1 py-md text-base;
+        }
+        &-xs {
+            @apply px-2 py-xs text-xs;
+        }
+        &-sm {
+            @apply px-3 py-sm text-sm;
+        }
+        &-md {
+            @apply px-4 py-md text-base;
+        }
+        &-lg {
+            @apply px-5 py-lg text-lg;
+        }
+        &-xl {
+            @apply px-56 py-xl text-xl;
+        }
+    }
+}

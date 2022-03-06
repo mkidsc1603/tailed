@@ -1,11 +1,15 @@
 .<template>
-  <input v-model="innerValue" :class="classString" />
+  <select v-model="innerValue" :class="classString">
+    <slot>
+      <option v-for="val in options" :key="val" :value="val">{{ val }}</option>
+    </slot>
+  </select>
 </template>
 
 <script>
 import { computed, toRefs, defineComponent } from "vue";
 export default defineComponent({
-  name: "EInput",
+  name: "ESelect",
   props: {
     modelValue: String | Number,
     type: {
@@ -14,6 +18,10 @@ export default defineComponent({
     },
     size: String,
     color: String,
+    /**
+     * { key, value }
+     */
+    options: Array,
   },
   emits: ["update:modelValue"],
   setup(props, { emit }) {
@@ -21,9 +29,9 @@ export default defineComponent({
     const classString = computed(() => {
       let typeClass = "";
       if (type.value.length > 0) {
-        typeClass = `ipt-design-${type.value}`;
+        typeClass = `sel-design-${type.value}`;
       }
-      return `ipt ipt-${color.value} ipt-size-${size.value} ${typeClass}`;
+      return `sel sel-${color.value} sel-size-${size.value} ${typeClass}`;
     });
 
     return {

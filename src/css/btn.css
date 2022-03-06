@@ -1,5 +1,5 @@
 .btn {
-  @apply font-mono uppercase rounded whitespace-nowrap;
+  @apply font-mono uppercase rounded whitespace-nowrap w-full;
 
   & {
     @apply bg-primary-500 text-white border-primary-500;
@@ -12,6 +12,10 @@
     }
     &:disabled {
       @apply opacity-25 pointer-events-none;
+    }
+    &[rounded],
+    [rounded=true] {
+      @apply rounded-full;
     }
   }
 
@@ -52,16 +56,6 @@
     }
     &:active {
       @apply bg-gray-700;
-    }
-  }
-
-  &-accent {
-    @apply bg-accent-500 text-white border-accent-500;
-    &:hover {
-      @apply bg-accent-600;
-    }
-    &:active {
-      @apply bg-accent-700;
     }
   }
 
