@@ -10,6 +10,11 @@ export const routes = [
     component: () => import('../pages/AddCount.vue'),
   },
   {
+    path: '/account',
+    name: 'account',
+    component: () => import('../pages/Account.vue'),
+  },
+  {
     path: '/demo',
     name: 'demo',
     component: () => import('../pages/Demo.vue'),

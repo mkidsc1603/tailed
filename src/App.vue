@@ -1,7 +1,7 @@
 <script>
 import { defineComponent, computed } from "vue";
 import { useRouter } from "vue-router";
-import {useThemeStore} from "./stores/theme"
+import { useThemeStore } from "./stores/theme";
 import EBtn from "./components/E-Btn.vue";
 import EInput from "./components/E-Input.vue";
 import ESelect from "./components/E-Select.vue";
@@ -22,8 +22,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="flex flex-row h-full gap-2">
-    <div class="flex-none w-40 h-full px-6 overflow-hidden">
+  <div class="flex flex-row h-full md:gap-2">
+    <div class="flex-none w-0 h-full overflow-hidden md:w-40 md:px-6">
       <div class="flex flex-col h-full gap-2 pt-20">
         <div class="self-center">
           <img title="eropz" class="rounded-full" src="./assets/photo.jpg" />
@@ -53,9 +53,16 @@ export default defineComponent({
           label="Count"
           @click="go('count')"
         />
+        <e-btn
+          type="link"
+          size="sm"
+          :color="currenRouteName === 'account' ? 'primary' : 'gray'"
+          label="account"
+          @click="go('account')"
+        />
       </div>
     </div>
-    <div class="grow h-full pt-12 px-20 bg-white overflow-y-scroll">
+    <div class="grow h-full p-1 bg-white overflow-y-scroll md:pt-12 md:px-20">
       <router-view></router-view>
     </div>
   </div>
